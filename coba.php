@@ -3,6 +3,7 @@ $id = $_GET['id'];
 $koneksi = mysqli_connect("localhost","root","","scrim");
 $quary = mysqli_query($koneksi,"SELECT * FROM team WHERE nama_scrim = '$id' ");
 $pa = mysqli_query($koneksi,"SELECT * FROM buat Where nama_scrim = '$id'");
+$quary = mysqli_fetch_assoc($pa);
 $apus = mysqli_fetch_assoc($pa);
 if (isset($apus['password'])) {
 	// code...
